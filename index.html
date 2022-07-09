@@ -1,377 +1,188 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>calculator</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=MuseoModerno:wght@300;400&display=swap" rel="stylesheet">
-
-
-    <style>
-
-body {
-  margin: 0 auto;
-  text-align: center;
-  font-size: 23px;
-  color: rgb(255, 255, 255);
-  background-color: #0E0E0E;
-
-}
-
-.main {
-  max-width: 10%;
-}
-
-a,
-a:visited  {
-  color: rgb(21, 103, 0);
-}
-
-.dark {
-  background : #447f00 !important;
-}
-
-.button > .over {
-  text-decoration:overline;
-  display: inline-block;
-  position:relative;
-  top: 3px;
-  left: -4px;
-}
-
-.calculator {
-  
-    display: inline-block;
-    background: #0E0E0E;
-    margin: 1% 0;
-    color: black;
-    border-radius: 5%;
-	border: 1px solid #2a2a2a;
-/*     box-shadow: 0px 8px 20px 0px grey; */
-    background-color: #0E0E0E;
-
-  
-}
-
-.calculator button {
-  
-    font-size: x-large;
-    color: #3f3f3f;
-    width: 2.5em;
-    min-height: 2.5em;
-    margin: 0.8%;
-    border-radius: 25%;
-    background-color: #636969;
-    border: 1px solid #ad919100;
-    font-family: 'MuseoModerno', cursive;
-
-}
-
-
-.calculator button:hover,
-#clear:hover,
-#backspace:hover {
-  background: #189f00!important;
-  color: #626262;
-  transform: scale(0.9);
-  border-radius: 20%;
-}
-
-.calculator button:focus,
-#clear:focus,
-#backspace:focus {
-  outline: none;
-}
-
-.button:active,
-.button-active {
-  background: gold;
-  color: white;
-  transform: scale(0.9);
-}
-
- #screen{
-    background-color: #414141;
-    border: 3px solid transparent;
-    /* box-shadow: 3px 3px 3px 3px grey; */
-    border-radius: 29px;
-    width: 80%;
-    height: 120px;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 5%;
-    text-align: right;
-    overflow: auto;
-    overflow-wrap: break-word;
-    font-size: 60px;
-    font-family: 'Dosis', sans-serif;
-
-}
-
-    
-
-
-#clean {
-  background: #009d95;
-}
-
-
-.calculator__row1,
-.calculator__row2,
-.calculator__row3,
-.calculator__row4,
-.calculator__row5 {
-  display: flex;
-  margin: 0 auto;
-     max-width: 80%;
-  justify-content: space-around;
-  align-items: center;
-  font-family: 'Libre Barcode 128 Text', cursive;
-}
-
-.calculator__row5 {
-  margin-bottom: 3%;
-} 
-
-.footer {
-  /* margin-top: 2%;
-  font-size: medium; */
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-
-    </style>
+  <title>clock</title>
 </head>
 <body>
-    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text" rel="stylesheet">
-<div id="main">
-		<div class="calculator">
-		<input type="text" id="screen">
-      <div class="calculator__row1">
-    <button class="button">Rad</button>
-    <button class="button" >Deg</button>
-                               
-    <h1 style="font-size: 200%;margin-left: 230px;margin-right: 20px;"></h1>
-    <button class="button" id="clean">AC</button>
-</div>
-    <div class="calculator__row2">
-         <button class="button">sin</button>
-         <button class="button">cos</button>
-         <button class="button">tan</button>
-		   <button class="button dark">7</button>
-			<button class="button dark">8</button>
-			<button class="button dark">9</button>
-			<button class="button">*</button>
+  <div class="clock">
+    <div class="outer-clock-face">
+      <div class="marking marking-one"></div>
+      <div class="marking marking-two"></div>
+      <div class="marking marking-three"></div>
+      <div class="marking marking-four"></div>
+      <div class="inner-clock-face">
+        <div class="hand hour-hand"></div>
+        <div class="hand min-hand"></div>
+        <div class="hand second-hand"></div>
+      </div>
     </div>
-	<div class="calculator__row3">
-        <button class="button">x^</button>
-        <button class="button">pi</button>
-        <button class="button">%</button>
-		  <button class="button dark">4</button>
-			<button class="button dark">5</button>
-			<button class="button dark">6</button>
-			<button class="button">/</button>
-	</div>
-	<div class="calculator__row4">
-      <button class="button">ln</button>
-      <button class="button">log</button>
-      <button class="button">x!</button>
-			<button class="button dark">1</button>
-			<button class="button dark">2</button>
-			<button class="button dark">3</button>
-			<button class="button">-</button>
-	</div>
-			<div class="calculator__row5">
-      <button class="button">&radic;<span class="over"></span></button>
-      <button class="button">(</button>
-      <button class="button">)</button>
-			<button class="button">.</button>
-      <button class="button dark">0</button>
-			<button class="button">=</button>
-			<button class="button">+</button>
-</div>
-</div>
-</div>
-
-	
-		
-	
+  </div>
 </body>
+<style>
+  html {
+  background: #0e0e0e;
+  text-align: center;
+  font-size: 10px;
+}
 
+body {
+  margin: 0;
+  font-size: 2rem;
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.clock {
+  width: 30rem;
+  height: 30rem;
+  border: 7px solid #0c571f;
+  border-radius: 50%;
+  margin: 50px auto;
+  position: relative;
+  padding: 2rem;
+  -webkit-box-shadow: 0 20px 30px rgba(73, 73, 73, 0.45);
+  -moz-box-shadow: 0 20px 30px rgba(73, 73, 73, 0.45);
+  box-shadow: 0 20px 30px rgba(73, 73, 73, 0.45);
+  background: #0c571f;
+}
+
+.outer-clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background: #373737;
+  -webkit-box-shadow: 0 20px 10px rgba(73, 73, 73, 0.45);
+  -moz-box-shadow: 0 20px 10px rgba(73, 73, 73, 0.45);
+  box-shadow: 0 20px 10px rgba(73, 73, 73, 0.45);
+  overflow: hidden;
+}
+
+.outer-clock-face::after {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  transform: rotate(90deg)
+}
+
+.outer-clock-face::before,
+.outer-clock-face::after,
+.outer-clock-face .marking{
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 100%;
+  background: #b8b8c5;
+  z-index: 0;
+  left: 49%;
+}
+
+.outer-clock-face .marking {
+  background: #bdbdcb;
+  width: 3px;
+}
+
+.outer-clock-face .marking.marking-one {
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  transform: rotate(30deg)
+}
+
+.outer-clock-face .marking.marking-two {
+  -webkit-transform: rotate(60deg);
+  -moz-transform: rotate(60deg);
+  transform: rotate(60deg)
+}
+
+.outer-clock-face .marking.marking-three {
+  -webkit-transform: rotate(120deg);
+  -moz-transform: rotate(120deg);
+  transform: rotate(120deg)
+}
+
+.outer-clock-face .marking.marking-four {
+  -webkit-transform: rotate(150deg);
+  -moz-transform: rotate(150deg);
+  transform: rotate(150deg)
+}
+
+.inner-clock-face {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background: #373737;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  z-index: 1;
+}
+
+.inner-clock-face::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 18px;
+  margin-left: -9px;
+  margin-top: -6px;
+  background: #00550a;
+  z-index: 11;
+}
+
+.hand {
+  width: 50%;
+  right: 50%;
+  height: 6px;
+  background: #61afff;
+  position: absolute;
+  top: 50%;
+  border-radius: 6px;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.hand.hour-hand {
+  width: 20%;
+  z-index: 3;
+}
+
+.hand.min-hand {
+  height: 3px;
+  z-index: 10;
+  width: 35%;
+}
+
+.hand.second-hand {
+  background: #007b02;
+  width: 40%;
+}
+</style>
 <script>
-var display = document.getElementById("screen");
-var buttons = document.getElementsByClassName("button");
-  
-  Array.prototype.forEach.call(buttons, function(button) {
-  button.addEventListener("click", function() {
-    if (button.textContent != "=" && 
-    button.textContent != "AC" && 
-    button.textContent != "*" && 
-    button.textContent != "/" && 
-    button.textContent != "√" && 
-    button.textContent != "+" && 
-    button.textContent != "%" && 
-    button.textContent != "=" && 
-    button.textContent != "-" && 
-    button.textContent != "sin" && 
-    button.textContent != "cos" && 
-    button.textContent != "tan" && 
-    button.textContent != "log" && 
-    button.textContent != "ln" && 
-    button.textContent != "x^" && 
-    button.textContent != "x!" && 
-    button.textContent != "pi" && 
-    button.textContent != "Rad" 
-    && button.textContent != "Deg") {
-      display.value += button.textContent;
-    } else if (button.textContent === "=") {
-      equals();
-    } else if (button.textContent === "AC") {
-      clear();
-    } else if (button.textContent === "*") {
-      multiply();
-    } else if (button.textContent === "/") {
-      divide();
-    } else if (button.textContent === "+") {
-      plus();
-      } else if (button.textContent === "-") {
-      Minus();
-    } else if (button.textContent === "%") {
-      percent();
-    } else if (button.textContent === "pi") {
-      pi();
-    } else if (button.textContent === "√") {
-      squareRoot();
-    } else if (button.textContent === "sin") {
-      sin();
-    } else if (button.textContent === "cos") {
-      cos();
-    } else if (button.textContent === "tan") {
-      tan();
-    } else if (button.textContent === "log") {
-      log();
-    } else if (button.textContent === "ln") {
-      ln();
-    } else if (button.textContent === "x^") {
-      exponent();
-    } else if (button.textContent === "x!") {
-      factorial();
-    } else if (button.textContent === "Rad") {
-      radians();
-    } else if (button.textContent === "Deg") {
-      degrees();
-    }
-  });
-});
+  const secondHand = document.querySelector('.second-hand');
+const minsHand = document.querySelector('.min-hand');
+const hourHand = document.querySelector('.hour-hand');
 
+function setDate() {
+  const now = new Date();
 
-function syntaxError() {
-  if (eval(display.value) == SyntaxError || eval(display.value) == ReferenceError || eval(display.value) == TypeError) {
-    display.value == "Syntax Error";
-  }
+  const seconds = now.getSeconds();
+  const secondsDegrees = ((seconds / 60) * 360) + 90;
+  secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+
+  const mins = now.getMinutes();
+  const minsDegrees = ((mins / 60) * 360) + ((seconds/60)*6) + 90;
+  minsHand.style.transform = `rotate(${minsDegrees}deg)`;
+
+  const hour = now.getHours();
+  const hourDegrees = ((hour / 12) * 360) + ((mins/60)*30) + 90;
+  hourHand.style.transform = `rotate(${hourDegrees}deg)`;
 }
 
+setInterval(setDate, 1000);
 
-function equals() {
-  if ((display.value).indexOf("^") > -1) {
-    var base = (display.value).slice(0, (display.value).indexOf("^"));
-    var exponent = (display.value).slice((display.value).indexOf("^") + 1);
-    display.value = eval("Math.pow(" + base + "," + exponent + ")");
-  } else {
-    display.value = eval(display.value)
-    checkLength()
-    syntaxError()
-  }
-}
-
-function clear() {
-  display.value = "";
-}
-
-
-function multiply() {
-  display.value += "*";
-}
-
-function divide() {
-  display.value +=  "/";
-}
-function plus() {
-  display.value +=  "+";
-}
-
-function Minus() {
-  display.value +=  "-";
-}
-
-function factorial() {
-  var number = 1;
-  if (display.value === 0) {
-    display.value = "1";
-  } else if (display.value < 0) {
-    display.value = "undefined";
-  } else {
-    var number = 1;
-    for (var i = display.value; i > 0; i--) {
-      number *=  i;
-    }
-    display.value = number;
-  }
-}
-
-function pi() {
-  display.value = (display.value * Math.PI);
-}
-
-function square() {
-  display.value = eval(display.value * display.value);
-}
-
-function squareRoot() {
-  display.value = Math.sqrt(display.value);
-}
-
-function percent() {
-  display.value = display.value / 100;
-}
-
-function sin() {
-  display.value = Math.sin(display.value);
-}
-
-	
-function cos() {
-  display.value = Math.cos(display.value);
-}
-
-function tan() {
-  display.value = Math.tan(display.value);
-}
-
-function log() {
-  display.value = Math.log10(display.value);
-}
-
-function ln() {
-  display.value = Math.log(display.value);
-}
-
-function exponent() {
-  display.value += "^";
-}
-
-
-function radians() {
-  display.value = display.value * (Math.PI / 180);
-}
-
-function degrees() {
-  display.value = display.value * (180 / Math.PI);
-}
-
+setDate();
 </script>
-
-</html>
